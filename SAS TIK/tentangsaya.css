@@ -1,0 +1,199 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.tentang-page {
+    background-color: #B99BD8;
+    background-image: url("Background Web Tentang Saya.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* AREA UTAMA PROFIL */
+.profil-wrapper {
+    flex: 1;
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profil-card {
+    background-color: #A450C2; /* Warna ungu magenta khas profil */
+    border: 7px dashed #FFFFFF;
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .profil-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* Kolom Foto */
+.profil-foto-box {
+    width: 100%;
+    height: 340px;
+    background-color: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.profil-foto-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Kolom Teks Informasi */
+.profil-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profil-info-box p {
+    color: #FFFFFF;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: justify;
+    margin: 0;
+}
+
+@media (max-width: 850px) {
+    .profil-info-box p {
+        text-align: center;
+    }
+}
+
+.profil-info-box strong {
+    color: #FFE5EF;
+    font-weight: 800;
+}
+
+/* TOMBOL MELAYANG BERANDA */
+.floating-home-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #FFB3C7;
+    color: #D94F82;
+    border: 4px solid #FFFFFF;
+    outline: 3px solid #ED76A2;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.floating-home-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter: brightness(1.08);
+}
+
+/* FOOTER */
+.closing-banner {
+    width: 100%;
+    background-color: #4D9331;
+    border-top: 8px dashed #FFFFFF;
+    padding: 28px 8%;
+    text-align: center;
+}
+
+.closing-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 800;
+    line-height: 1.5;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.closing-text:hover {
+    transform: scale(1.03) translateY(-3px);
+    color: #FF66B2;
+}
+
+.profil-foto-box {
+    position: relative; /* Penting untuk mengatur posisi foto di dalamnya */
+    width: 100%;
+    height: 340px;
+    background-color: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Foto Utama (tampil secara default) */
+.profil-foto-box .foto-utama {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Transisi halus */
+}
+
+/* Foto Kecil (disembunyikan secara default) */
+.profil-foto-box .foto-kecil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Atau ubah ke 'contain' jika ingin foto kecilnya tidak terpotong */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Saat kursor mendekat (di-hover) ke dalam kotak foto */
+.profil-foto-box:hover .foto-utama {
+    opacity: 0; /* Foto utama disembunyikan */
+}
+
+.profil-foto-box:hover .foto-kecil {
+    opacity: 1; /* Foto kecil dimunculkan */
+    transform: scale(1.05); /* Efek zoom sedikit agar dinamis */
+}

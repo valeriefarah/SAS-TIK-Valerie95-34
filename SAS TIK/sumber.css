@@ -1,0 +1,149 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.sumber-page {
+    background-color: #3b1e08;
+    background-image: url("background web sumber.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* AREA UTAMA DAFTAR PUSTAKA */
+.sumber-wrapper {
+    flex: 1;
+    max-width: 1000px;
+    width: 92%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kotak Luar Warna Kuning Pastel */
+.sumber-outer-box {
+    width: 100%;
+    background-color: #FFD166;
+    border: 6px solid #F4A261;
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Kotak Dalam Warna Pink (bisa di-hover) */
+.sumber-inner-card {
+    background-color: #FF66B2;
+    border: 4px solid #FFFFFF;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+/* Efek Hover pada Kotak Pink */
+.sumber-inner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.04);
+}
+
+.sumber-inner-card ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sumber-inner-card li {
+    color: #FFFFFF;
+}
+
+/* Styling Tautan Link agar bisa diklik dan interaktif */
+.sumber-inner-card a {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: justify;
+    text-decoration: underline;
+    word-break: break-all;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.sumber-inner-card a:hover {
+    color: #FFFDE0;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* TOMBOL MELAYANG BERANDA */
+.floating-home-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #FFB3C7;
+    color: #D94F82;
+    border: 4px solid #FFFFFF;
+    outline: 3px solid #ED76A2;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.floating-home-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    filter: brightness(1.08);
+}
+
+/* FOOTER */
+.closing-banner {
+    width: 100%;
+    background-color: #4D9331;
+    border-top: 8px dashed #FFFFFF;
+    padding: 28px 8%;
+    text-align: center;
+}
+
+.closing-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 800;
+    line-height: 1.5;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.closing-text:hover {
+    transform: scale(1.03) translateY(-3px);
+    color: #FF66B2;
+}
